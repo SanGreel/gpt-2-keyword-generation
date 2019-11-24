@@ -161,8 +161,9 @@ class Encoder(object):
         for _ in range(self.repeat):
             new_keywords = keywords
             shuffle(new_keywords)
-            new_keywords = " ".join(
-                new_keywords[:randint(0, self.max_keywords)])
+            # new_keywords = " ".join(
+            #     new_keywords[:randint(0, self.max_keywords)])
+            new_keywords = " ".join(new_keywords[:self.max_keywords])
 
             encoded_texts.append(self.start_token +
                                  self.build_section('category', category) +
